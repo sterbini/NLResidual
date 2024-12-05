@@ -1,0 +1,21 @@
+#======================================================
+#-- Residual analysis
+#======================================================
+#------------------
+collider_path : 
+sequence      : lhcb1
+disable_ho    : True
+#------------------
+s_marker      : ip3
+e_marker      : _end_point
+#------------------
+n_per_torus   : 1000
+n_turns       : 5
+#------------------
+r_min         : 4.0
+r_max         : 8.0
+n_r           : 30
+n_angles      : 11
+#------------------
+num_threads   : 'auto'
+out_path      : ./NLR_df_HO_OFF.parquet

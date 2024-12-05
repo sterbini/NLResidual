@@ -1,0 +1,48 @@
+# ==================================================================================================
+# --- Structure of the study ---
+# ==================================================================================================
+name: trees/NLR_2025_octupole_scan_5t
+
+# List all useful files that will be used by executable in generations below
+# These files are placed at the root of the study
+dependencies:
+  main_configuration: configs/config_1_base.yaml
+  # Custom dependencies
+  submodules : 
+    - scripts/xsuiteplus.py
+    - scripts/compute_residual.py
+    - configs/config_2_nlr.yaml
+    - configs/config_3_nlr.yaml
+    - fillingschemes/2025_config_5x36_converted.json
+
+
+structure:
+  # First generation is always at the root of the study
+  # such that config_runIII.yaml is accessible as ../config_runIII.yaml
+  generation_1:
+    executable: scripts/generation_1.py
+    scans:
+    common_parameters:
+      # Needs to be redeclared as it's used for parallelization
+      # And re-used ine the second generation
+      n_split: 5
+
+  # Second generation depends on the config from the first generation
+  generation_2:
+    executable: scripts/generation_2_nb_leveling.py
+    scans:
+      distribution_file:
+        # Number of paths is set by n_split in the main config
+        path_list: ["____.parquet", n_split]
+      qx:
+        subvariables: [lhcb1, lhcb2]
+        linspace: [62.305, 62.330, 26]
+      qy:
+        subvariables: [lhcb1, lhcb2]
+        expression: qx - 2 + 0.005
+        concomitant: [qx]
+      i_oct_b1:
+        linspace: [-300, 300, 21]
+      i_oct_b2:
+        linspace: [-300, 300, 21]
+        concomitant: [i_oct_b1]
