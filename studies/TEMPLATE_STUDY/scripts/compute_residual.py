@@ -66,9 +66,9 @@ def prepare_line(config,collider = None,full_configuration = None):
     for nn in bbho_names_all:
         line0.element_refs[nn].scale_strength = 0
     
-    # Moved down for general purpose
-    # twiss0      = line0.twiss4d()
-    # twiss_init  = twiss0.get_twiss_init(at_element=s_marker)
+    
+    twiss0      = line0.twiss4d()
+    twiss_init  = twiss0.get_twiss_init(at_element=s_marker)
 
     # Restoring active bblr and bbho
     #--------------------------------
@@ -81,8 +81,8 @@ def prepare_line(config,collider = None,full_configuration = None):
     #===========================================
 
 
-    twiss0      = line0.twiss4d()
-    twiss_init  = twiss0.get_twiss_init(at_element=s_marker)
+    # twiss0      = line0.twiss4d()
+    # twiss_init  = twiss0.get_twiss_init(at_element=s_marker)
 
     return line0,twiss0,twiss_init,beam_name,s_marker,e_marker
 

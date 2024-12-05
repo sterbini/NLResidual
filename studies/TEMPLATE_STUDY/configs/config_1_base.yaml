@@ -124,32 +124,33 @@ config_collider:
       # BBCW
       bbcw:
         d_normalized: true # If true, the distance is normalized to sigma
-        b1:
-          #-----------------
-          i_4l1: 0.0    # [A/tank]
-          d_4l1: 10.0   # [m] or [sigma] if normalized: true
-          #-----------------
-          i_4r1: 0.0    # [A/tank]
-          d_4r1: 10.0   # [m] or [sigma] if normalized: true
-          #-----------------
-          i_4l5: 0.0    # [A/tank]
-          d_4l5: 10.0   # [m] or [sigma] if normalized: true
-          #-----------------
-          i_4r5: 0.0    # [A/tank]
-          d_4r5: 10.0   # [m ]or s[igma ]if normalized: true
-        b2:
-          #-----------------
-          i_4l1: 0.0    # [A/tank]
-          d_4l1: 10.0   # [m] or [sigma] if normalized: true
-          #-----------------
-          i_4r1: 0.0    # [A/tank]
-          d_4r1: 10.0   # [m] or [sigma] if normalized: true
-          #-----------------
-          i_4l5: 0.0    # [A/tank]
-          d_4l5: 10.0   # [m] or [sigma] if normalized: true
-          #-----------------
-          i_4r5: 0.0    # [A/tank]
-          d_4r5: 10.0   # [m] or [sigma] if normalized: true
+        # Beam 1
+        #-----------------
+        i_bbcw_4l1_b1: 0.0    # [A/tank]
+        d_bbcw_4l1_b1: 10.0   # [m] or [sigma] if normalized: true
+        #-----------------
+        # i_bbcw_4r1_b1: 0.0    # [A/tank]
+        # d_bbcw_4r1_b1: 10.0   # [m] or [sigma] if normalized: true
+        #-----------------
+        i_bbcw_4l5_b1: 0.0    # [A/tank]
+        d_bbcw_4l5_b1: 10.0   # [m] or [sigma] if normalized: true
+        #-----------------
+        # i_bbcw_4r5_b1: 0.0    # [A/tank]
+        # d_bbcw_4r5_b1: 10.0   # [m ]or s[igma ]if normalized: true
+        # Beam 2
+        #-----------------
+        # i_bbcw_4l1_b2: 0.0    # [A/tank]
+        # d_bbcw_4l1_b2: 10.0   # [m] or [sigma] if normalized: true
+        #-----------------
+        i_bbcw_4r1_b2: 0.0    # [A/tank]
+        d_bbcw_4r1_b2: 10.0   # [m] or [sigma] if normalized: true
+        #-----------------
+        # i_bbcw_4l5_b2: 0.0    # [A/tank]
+        # d_bbcw_4l5_b2: 10.0   # [m] or [sigma] if normalized: true
+        #-----------------
+        i_bbcw_4r5_b2: 0.0    # [A/tank]
+        d_bbcw_4r5_b2: 10.0   # [m ]or s[igma ]if normalized: true
+
 
     # Tunes and chromaticities
     qx:

@@ -1,7 +1,7 @@
 # ==================================================================================================
 # --- Structure of the study ---
 # ==================================================================================================
-name: trees/NLR_2025_octupole_scan_5t
+name: trees/BBCW_SCAN_2025
 
 # List all useful files that will be used by executable in generations below
 # These files are placed at the root of the study
@@ -34,15 +34,18 @@ structure:
       distribution_file:
         # Number of paths is set by n_split in the main config
         path_list: ["____.parquet", n_split]
-      qx:
-        subvariables: [lhcb1, lhcb2]
-        linspace: [62.305, 62.330, 26]
-      qy:
-        subvariables: [lhcb1, lhcb2]
-        expression: qx - 2 + 0.005
-        concomitant: [qx]
-      i_oct_b1:
-        linspace: [-300, 300, 21]
-      i_oct_b2:
-        linspace: [-300, 300, 21]
-        concomitant: [i_oct_b1]
+
+      # BBCW current scan
+      i_bbcw_4l1_b1:
+        linspace: [0,300, 2]
+      i_bbcw_4l5_b1:
+        linspace: [0,300, 2]
+
+
+      # Linking Beam 2 to Beam 1 (concomitant)
+      i_bbcw_4r1_b2:
+        expression: i_bbcw_4l1_b1
+        concomitant: [i_bbcw_4l1_b1]
+      i_bbcw_4r5_b2:
+        expression: i_bbcw_4l5_b1
+        concomitant: [i_bbcw_4l5_b1]
