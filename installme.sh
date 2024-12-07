@@ -1,5 +1,5 @@
 # Create your own virtual environment in a new folder
-source /home/phbelang/base/miniforge/bin/activate
+source ~/base/miniforge/bin/activate
 ENV_NAME="py-NLR"
 mkdir ./Executables
 conda update -n base -c conda-forge conda
@@ -37,7 +37,7 @@ fi
 
 # Install CERN packages
 #=========================================
-git clone --recurse-submodules https://github.com/pbelange/study-DA.git ./study-DA
+git clone --recurse-submodules --branch feature/wires  https://github.com/pbelange/study-DA.git ./study-DA
 pip install -e ./study-DA
 
 
@@ -57,7 +57,7 @@ pip install -e ./Executables/$ENV_NAME/xpart
 git clone https://github.com/xsuite/xtrack ./Executables/$ENV_NAME/xtrack
 pip install -e ./Executables/$ENV_NAME/xtrack
 
-git clone https://github.com/xsuite/xmask ./Executables/$ENV_NAME/xmask
+git clone --recurse-submodules https://github.com/xsuite/xmask ./Executables/$ENV_NAME/xmask
 pip install -e ./Executables/$ENV_NAME/xmask
 
 git clone https://github.com/xsuite/xfields ./Executables/$ENV_NAME/xfields
@@ -66,10 +66,10 @@ pip install -e ./Executables/$ENV_NAME/xfields
 
 # Download outsourced files
 #=========================================
-cd ./Executables/$ENV_NAME/xmask
-git config --global --add safe.directory ./
-git submodule init
-git submodule update
+# cd ./Executables/$ENV_NAME/xmask
+# git config --global --add safe.directory ./
+# git submodule init
+# git submodule update
 
 git clone https://github.com/xsuite/xsuite ./Executables/$ENV_NAME/xsuite
 pip install -e ./Executables/$ENV_NAME/xsuite
