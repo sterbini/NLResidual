@@ -1,6 +1,6 @@
 # NLResidual
 
-# Minimal installation
+## Minimal installation
 The `installme.sh` script can be used to install additionnal packages on top of a basic distribution (the file should be inspected and modified accordingly).
 The minimal installation simply requires the study-DA package on top of xsuite, so you can do the following:
 ```bash
@@ -12,7 +12,7 @@ git checkout feature/wires
 ```
 
 
-# Important files:
+## Important files:
 
 The important files to potentially modify for the wire are:
 ```bash
@@ -26,7 +26,7 @@ The important files to potentially modify for the wire are:
 ./study-DA/study_da/generate/version_specific_files/runIII/bbcw_installation.py
 ```
 
-# Quick explanations:
+## Quick explanations:
 The workflow is as following:
 1. Prepare the study/scripts. `./studies/TEMPLATE_STUDY/configs` contains the base config of the mask + the config for the NLR
 2. Prepare the generation scripts. `studies/TEMPLATE_STUDY/scripts/generation_1.py` and `generation_2.py` are the scripts which will be copied in the tree (the template)
